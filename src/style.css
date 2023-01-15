@@ -1,0 +1,152 @@
+/* Guia*/
+/* --Imports--
+ --root--
+ --Custom Elements --
+ --Custom Classes--
+  -div
+  -input
+    date Input
+  -background
+*/
+
+/* --Imports-- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base{
+  html{
+   font-family: 'Roboto', sans-serif;
+  }
+}
+html, body {
+  overflow: hidden;
+ }
+
+/* --root-- */
+:root {
+  --color-primary: #000054;
+  --color-secundary: #FFA120;
+  --colot-text: #1B1B42;
+  --color-white: #FFFFFF;
+}
+
+/* Custom Elements */
+
+img{
+  width: 100%;
+  height: 100vh;
+}
+
+form{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+p{
+  color:var(--color-white)
+}
+
+/* Custom Classes*/
+/* -divs*/
+
+.divGlass{
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  border: 1px solid rgba(255, 255, 255, 0.2)
+  /* this div has glass effect*/
+}
+
+.divData{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  /*This div is for the P element in the v-else div */
+}
+
+.binding{
+  border-bottom: 1px solid var(--color-white);
+  border-radius: 0px;
+  padding: 1% 1% 1% 2%;
+  margin-top: 10%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  /* this div is for the v-else div in the component form*/
+}
+
+/* -input */
+
+.inputCS{
+  border: #ffffff80 solid 1px;
+  padding: 1% 1% 1% 2%;
+  border-radius: 15px;
+  margin-top: 10%;
+  background-color: transparent;
+}
+
+input::placeholder {
+  color: var(--color-white);
+  font-size: 15px;
+}
+
+input:not(:placeholder-shown){
+  color: var(--color-white);
+  background-color: transparent;
+}
+
+textarea:focus, input:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+
+}
+
+textarea:active, input:active {
+background-color: transparent;
+
+}
+/* date Input */
+
+input[type=date]::-webkit-datetime-edit{ color: transparent; }
+input[type=date]:valid::-webkit-datetime-edit{ 
+  color: var(--color-white); 
+  font-weight: 400 ; 
+}
+input[type=date]:focus::-webkit-datetime-edit{ color: var(--color-white); font-weight: 400; }
+
+input[type=date]{ color: transparent; }
+input[type=date]:valid{ color: var(--color-white); }
+input[type=date]:focus{ color:var(--color-white); }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(100%); /* this filter change the color of the calendar icon to white */
+}
+/* number Input */
+input[type=number]{color: var(--color-white);}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* to hide the inner arrow */
+    margin: 0;
+}
+
+ /*Btn */
+
+.btnBase{
+  border: #ffffff80 solid 1px;
+  padding: 2%;
+  border-radius: 20px;
+  width: 50%;
+  color: white;
+  transform: translate(50%, 50%);
+}
+/* -background */
+.bg {
+  background-image: url("./assets/bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
